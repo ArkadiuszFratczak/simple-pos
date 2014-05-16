@@ -6,4 +6,9 @@ package com.cybercom.simple.pos.io;
  */
 public interface BarCodeScanner {
     
+    /**
+     * Scans bar code
+     * @return scanned code
+     */
+    String scan();
 }

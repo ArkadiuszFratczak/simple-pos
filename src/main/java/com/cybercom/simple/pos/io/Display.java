@@ -6,4 +6,9 @@ package com.cybercom.simple.pos.io;
  */
 public interface Display {
     
+    /**
+     * Displays given line on device
+     * @param line 
+     */
+    void display(String line);
 }
