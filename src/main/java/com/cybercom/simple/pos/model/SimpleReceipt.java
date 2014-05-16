@@ -15,7 +15,6 @@ public class SimpleReceipt implements Receipt {
 
     public SimpleReceipt() {
         this.purchasedProducts = new LinkedList<Product>();
-        totalSum = 0f;
     }
     
     @Override

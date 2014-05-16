@@ -6,6 +6,8 @@ package com.cybercom.simple.pos.io;
  */
 public interface BarCodeScanner {
     
+    String EXIT_CODE = "exit";
+    
     /**
      * Scans bar code
      * @return scanned code
