@@ -1,5 +1,6 @@
 package com.cybercom.simple.pos.io;
 
+import com.cybercom.simple.pos.PoS;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  */
 public class BarCodeScannerStub implements BarCodeScanner {
     
+    private PoS pointOfSale;
     private List<String> scannedCodes;
     private int scanNr;
 
@@ -25,6 +27,10 @@ public class BarCodeScannerStub implements BarCodeScanner {
     public void setScannedCodes(List<String> scannedCodes) {
         this.scannedCodes = scannedCodes;
         scanNr = 0;
+    }
+
+    public void registerPoS(PoS pointOfSaleMachine) {
+        this.pointOfSale = pointOfSaleMachine;
     }
     
 }
