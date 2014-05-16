@@ -2,6 +2,7 @@ package com.cybercom.simple.pos;
 
 import com.cybercom.simple.pos.dao.ProductDao;
 import com.cybercom.simple.pos.dao.ProductNotFoundException;
+import com.cybercom.simple.pos.io.BarCodeScanner;
 import com.cybercom.simple.pos.io.Display;
 import com.cybercom.simple.pos.io.Printer;
 import com.cybercom.simple.pos.model.Product;
@@ -33,6 +34,11 @@ public class PoSImpl implements PoS {
     @Override
     public void registerDisplay(Display display) {
         this.display = display;
+    }
+    
+    @Override
+    public void registerScanner(BarCodeScanner scanner) {
+        scanner.registerPoS(this);
     }
     
     @Override

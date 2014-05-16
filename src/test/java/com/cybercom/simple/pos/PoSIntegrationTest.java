@@ -30,8 +30,7 @@ public class PoSIntegrationTest {
             
         pos.registerDisplay(display);
         pos.registerPrinter(printer);
-        
-        scanner.registerPoS(pos);
+        pos.registerScanner(scanner);
     }
     
     @Test

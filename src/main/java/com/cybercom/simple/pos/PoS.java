@@ -1,5 +1,6 @@
 package com.cybercom.simple.pos;
 
+import com.cybercom.simple.pos.io.BarCodeScanner;
 import com.cybercom.simple.pos.io.Display;
 import com.cybercom.simple.pos.io.Printer;
 
@@ -25,6 +26,12 @@ public interface PoS {
      * @param display 
      */
     public void registerDisplay(Display display);
+    
+    /**
+     * Connects to scanner
+     * @param scanner 
+     */
+    public void registerScanner(BarCodeScanner scanner);
     
     /**
      * Provides scanned product code to PoS
