@@ -1,38 +1,21 @@
 package com.cybercom.simple.pos.model;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Arkadiusz.Fratczak
  */
-public class Product implements Serializable {
-    
-    private String name;
-    private float price;
+public interface Product {
 
-    public Product() {
-    }
+    /**
+     * Gets product name
+     * @return product name
+     */
+    String getName();
 
-    public Product(String name, float price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }    
+    /**
+     * Gets product price
+     * @return product price
+     */
+    float getPrice();
     
 }
