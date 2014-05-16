@@ -6,15 +6,12 @@ import com.cybercom.simple.pos.PoS;
  *
  * @author Arkadiusz.Fratczak
  */
-public interface BarCodeScanner {
-    
-    String EXIT_CODE = "exit";
+public interface BarCodeScanner {    
     
     /**
      * Scans bar code
-     * @return scanned code
      */
-    String scan();
+    void scan();
     
     /**
      * Connect to point of sale machine

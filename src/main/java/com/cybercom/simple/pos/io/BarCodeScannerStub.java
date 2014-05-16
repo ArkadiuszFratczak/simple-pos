@@ -16,21 +16,23 @@ public class BarCodeScannerStub implements BarCodeScanner {
 
     public BarCodeScannerStub() {
         scannedCodes = Arrays.asList("000001", "100000", "000002", "",  "000003", "", 
-            "000004", "200000", "000006", BarCodeScanner.EXIT_CODE);
+            "000004", "200000", "000006", PoS.EXIT_CODE);
     }    
 
     @Override
-    public String scan() {
-        return scannedCodes.get(scanNr++ % scannedCodes.size());
+    public void scan() {
+        String productCode = scannedCodes.get(scanNr++ % scannedCodes.size());
+        pointOfSale.provideProductCode(productCode);
+    }
+    
+    @Override
+    public void registerPoS(PoS pointOfSaleMachine) {
+        this.pointOfSale = pointOfSaleMachine;
     }
 
     public void setScannedCodes(List<String> scannedCodes) {
         this.scannedCodes = scannedCodes;
         scanNr = 0;
-    }
-
-    public void registerPoS(PoS pointOfSaleMachine) {
-        this.pointOfSale = pointOfSaleMachine;
-    }
+    }    
     
 }
