@@ -40,8 +40,8 @@ public class PoSImpl implements PoS {
         if (productCode.isEmpty()) {
             display.display("Invalid bar-code");
         } else if (productCode.equalsIgnoreCase(PoS.EXIT_CODE)) {
-            printer.print(receipt);
             display.display("Total sum: " + receipt.getTotalSum());
+            printer.print(receipt);
             clearReceipt();
         } else {
             try {
