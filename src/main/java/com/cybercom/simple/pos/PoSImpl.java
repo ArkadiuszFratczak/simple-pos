@@ -44,7 +44,7 @@ public class PoSImpl implements PoS {
     @Override
     public void provideProductCode(String productCode) {
         if (productCode.isEmpty()) {
-            display.display("Invalid bar-code");
+            display.display(PoS.INVALID_BAR_CODE);
         } else if (productCode.equalsIgnoreCase(PoS.EXIT_CODE)) {
             display.display("Total sum: " + receipt.getTotalSum());
             printer.print(receipt);
@@ -55,7 +55,7 @@ public class PoSImpl implements PoS {
                 receipt.addProduct(product);
                 display.display(product.toString());
             } catch (ProductNotFoundException ex) {
-                display.display("Product not found");
+                display.display(PoS.PRODUCT_NOT_FOUND);
             }
         }
     }

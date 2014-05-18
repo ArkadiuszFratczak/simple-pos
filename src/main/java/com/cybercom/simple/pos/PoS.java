@@ -15,6 +15,16 @@ public interface PoS {
     */
     String EXIT_CODE = "exit";
     
+    /*
+    * Defines message for not found product
+    */
+    String PRODUCT_NOT_FOUND = "Product not found";
+    
+    /*
+    * Defines message for invalid bar code
+    */
+    String INVALID_BAR_CODE = "Invalid bar-code";
+    
     /**
      * Connects to printer
      * @param printer 
@@ -34,7 +44,8 @@ public interface PoS {
     public void registerScanner(BarCodeScanner scanner);
     
     /**
-     * Provides scanned product code to PoS
+     * Provides scanned product code to PoS. 
+     * Note that all input/output devices should be registered first.
      * @param productCode 
      */
     public void provideProductCode(String productCode);
