@@ -14,7 +14,7 @@ import org.junit.Test;
  *
  * @author Arkadiusz.Fratczak
  */
-public class PoSIntegrationTest {
+public class PoSFunctionalTest {
     
     private Display display;
     private Printer printer;

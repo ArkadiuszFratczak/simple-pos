@@ -24,8 +24,8 @@ public class SimpleReceipt implements Receipt {
     }
     
     @Override
-    public void removeProduct(Product product) {
-        purchasedProducts.remove(product);
+    public void removeProduct(int position) {
+        purchasedProducts.remove(position);
     }
 
     @Override

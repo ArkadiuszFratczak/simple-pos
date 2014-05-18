@@ -27,9 +27,9 @@ public interface Receipt {
     float getTotalSum();
 
     /**
-     * Removes porduct from receipt
-     * @param product 
+     * Removes product with given position from receipt
+     * @param position number of product on receipt 
      */
-    void removeProduct(Product product);
+    void removeProduct(int position);
     
 }
