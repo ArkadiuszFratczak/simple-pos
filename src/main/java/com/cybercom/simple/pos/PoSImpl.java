@@ -21,23 +21,43 @@ public class PoSImpl implements PoS {
     
     private Receipt receipt;
 
-    public PoSImpl(ProductDao productDao) {
+    public PoSImpl(ProductDao productDao, Display display, Printer printer) {
+        if (productDao == null) {
+            throw new RuntimeException("ProductDao may not be null");
+        }
+        if (display == null) {
+            throw new RuntimeException("Display may not be null");
+        }
+        if (printer == null) {
+            throw new RuntimeException("Printer may not be null");
+        }
         this.productDao = productDao;
+        this.display = display;
+        this.printer = printer;
         this.receipt = new SimpleReceipt();
     }
 
     @Override
     public void registerPrinter(Printer printer) {
+        if (printer == null) {
+            throw new RuntimeException("Printer should not be null");
+        }
         this.printer = printer;
     }
 
     @Override
     public void registerDisplay(Display display) {
+        if (display == null) {
+            throw new RuntimeException("Display should not be null");
+        }
         this.display = display;
     }
     
     @Override
     public void registerScanner(BarCodeScanner scanner) {
+        if (scanner == null) {
+            throw new RuntimeException("Scanner should not be null");
+        }
         scanner.registerPoS(this);
     }
     
@@ -61,6 +81,9 @@ public class PoSImpl implements PoS {
     }
 
     public void setProductDao(ProductDao productDao) {
+        if (productDao == null) {
+            throw new RuntimeException("ProductDao may not be null");
+        }
         this.productDao = productDao;
     }
 

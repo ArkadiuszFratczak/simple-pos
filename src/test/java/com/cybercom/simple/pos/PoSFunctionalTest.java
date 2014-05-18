@@ -26,10 +26,8 @@ public class PoSFunctionalTest {
         display = new LcdDisplayStub();
         printer = new PrinterStub();
         scanner = new BarCodeScannerStub();
-        pos = new PoSImpl(new ProductDaoStub());
-            
-        pos.registerDisplay(display);
-        pos.registerPrinter(printer);
+        pos = new PoSImpl(new ProductDaoStub(), display, printer);
+        
         pos.registerScanner(scanner);
     }
     

@@ -2,7 +2,6 @@ package com.cybercom.simple.pos;
 
 import com.cybercom.simple.pos.dao.ProductDao;
 import com.cybercom.simple.pos.dao.ProductNotFoundException;
-import com.cybercom.simple.pos.io.BarCodeScanner;
 import com.cybercom.simple.pos.io.Display;
 import com.cybercom.simple.pos.io.Printer;
 import com.cybercom.simple.pos.model.Product;
@@ -21,7 +20,6 @@ import org.mockito.MockitoAnnotations;
 public class PoSImplTest {
     
     @Mock private ProductDao productDao;
-    @Mock private BarCodeScanner scanner;
     @Mock private Display display;
     @Mock private Printer printer;
     
@@ -30,11 +28,7 @@ public class PoSImplTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        testedPos = new PoSImpl(productDao);
-        
-        testedPos.registerDisplay(display);
-        testedPos.registerPrinter(printer);
-        testedPos.registerScanner(scanner);
+        testedPos = new PoSImpl(productDao, display, printer);
     }
 
     /**
