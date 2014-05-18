@@ -15,9 +15,13 @@ public class BarCodeScannerStub implements BarCodeScanner {
     private int scanNr;
 
     public BarCodeScannerStub() {
-        scannedCodes = Arrays.asList("000001", "100000", "000002", "",  "000003", "", 
+        this.scannedCodes = Arrays.asList("000001", "100000", "000002", "",  "000003", "", 
             "000004", "200000", "000006", PoS.EXIT_CODE);
-    }    
+    }
+    
+    public BarCodeScannerStub(List<String> codes) {
+        this.scannedCodes = codes;
+    }
 
     @Override
     public void scan() {

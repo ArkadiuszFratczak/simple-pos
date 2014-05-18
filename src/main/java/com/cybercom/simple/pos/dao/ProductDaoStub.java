@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class ProductDaoStub implements ProductDao {
     
-    private final Map<String, Product> products;
+    private Map<String, Product> products;
 
     public ProductDaoStub() {
         products = new HashMap<String, Product>();
@@ -23,6 +23,11 @@ public class ProductDaoStub implements ProductDao {
         products.put("000006", new SimpleProduct("Fries 1kg", 4.99f));
     }
 
+    public ProductDaoStub(Map<String, Product> products) {
+        this.products = products;
+    }
+    
+
     @Override
     public Product getProduct(String productCode) throws ProductNotFoundException {
         Product product = products.get(productCode);
@@ -31,6 +36,10 @@ public class ProductDaoStub implements ProductDao {
         } else {
             return product;
         }
+    }
+
+    public void setProducts(Map<String, Product> products) {
+        this.products = products;
     }
     
 }
