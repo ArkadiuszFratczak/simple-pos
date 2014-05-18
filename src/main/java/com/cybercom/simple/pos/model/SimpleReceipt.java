@@ -1,5 +1,6 @@
 package com.cybercom.simple.pos.model;
 
+import com.cybercom.simple.pos.dao.ProductNotFoundException;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,8 +25,12 @@ public class SimpleReceipt implements Receipt {
     }
     
     @Override
-    public void removeProduct(int position) {
-        purchasedProducts.remove(position);
+    public void removeProduct(int position) throws ProductNotFoundException {
+        try {
+            purchasedProducts.remove(position);
+        } catch (IndexOutOfBoundsException ex) {
+            throw new ProductNotFoundException("Wrong number of product");
+        }
     }
 
     @Override

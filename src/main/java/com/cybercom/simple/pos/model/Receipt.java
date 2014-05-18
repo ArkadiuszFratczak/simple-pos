@@ -1,5 +1,6 @@
 package com.cybercom.simple.pos.model;
 
+import com.cybercom.simple.pos.dao.ProductNotFoundException;
 import java.util.List;
 
 /**
@@ -28,8 +29,10 @@ public interface Receipt {
 
     /**
      * Removes product with given position from receipt
-     * @param position number of product on receipt 
+     * @param position number of product on receipt
+     * @throws ProductNotFoundException when product with given position 
+     * not exists on receipt
      */
-    void removeProduct(int position);
+    void removeProduct(int position) throws ProductNotFoundException;
     
 }
